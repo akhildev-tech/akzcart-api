@@ -20,7 +20,7 @@ function generateDatabasePool({ provider }): Provider {
       const pool = new Pool({
         host: config.db.host,
         database: config.db.database,
-        port: parseInt(config.db.port, 10),
+        port: parseInt(config.db.port as string, 10),
         user: config.db.user,
         password: config.db.password,
       });
@@ -36,7 +36,7 @@ function generateDatabasePool({ provider }): Provider {
             },
             resetOnSuccess: true,
           }),
-          catchError(async (err) => {
+          catchError((err) => {
             logger.error(err);
             throw err;
           }),

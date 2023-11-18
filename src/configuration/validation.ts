@@ -14,4 +14,6 @@ export default Joi.object({
   DB_PORT: Joi.string().default(K.DATABASE_DEFAULT_PORT),
   DB_USER: Joi.string().required(),
   DB_PASSWORD: Joi.string().required(),
+  SUPABASE_URL: Joi.string().required(),
+  SUPABASE_KEY: Joi.string().required(),
 });

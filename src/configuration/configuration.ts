@@ -11,4 +11,8 @@ export default registerAs('configuration', () => ({
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
   },
+  supabase: {
+    url: process.env.SUPABASE_URL,
+    key: process.env.SUPABASE_KEY,
+  },
 }));

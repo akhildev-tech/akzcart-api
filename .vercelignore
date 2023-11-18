@@ -1,0 +1,25 @@
+# source code
+/src
+
+# compiled output
+/node_modules
+/.vercel
+/.cache
+
+# OS
+.DS_Store
+
+# IDEs and editors
+.prettierrc
+.gitignore
+.vercelignore
+nest-cli.json
+package-lock.json
+.eslintrc.js
+tsconfig.json
+tsconfig.build.json
+vercel.json
+README.md
+
+# Environment
+.env

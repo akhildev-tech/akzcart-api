@@ -39,7 +39,7 @@ async function bootstrap() {
   // Transforming response
   app.useGlobalInterceptors(new TransformInterceptor());
 
-  await app.listen(port, K.DEFAULT_ADDRESS);
+  await app.listen(port as string, K.DEFAULT_ADDRESS);
   logger.log(`Listening on port ${port}, running in ${env} environment`);
 }
 bootstrap();

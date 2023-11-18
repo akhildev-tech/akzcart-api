@@ -4,6 +4,7 @@ import { ApiModule } from './api/api.module';
 import configuration from './configuration/configuration';
 import validationSchema from './configuration/validation';
 import { DatabaseModule } from './database/database.module';
+import { SupabaseModule } from './supabase/supabase.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { DatabaseModule } from './database/database.module';
     }),
     ApiModule,
     DatabaseModule,
+    SupabaseModule,
   ],
 })
 export class AppModule {}
