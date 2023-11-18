@@ -3,7 +3,8 @@ import * as K from 'src/shared/constants/app.constants';
 
 @Injectable({ scope: Scope.TRANSIENT })
 export class Logger extends ConsoleLogger {
-  private readonly isDebugMode = process.env.DEBUG_MODE === K.BOOLEAN.TRUE;
+  private readonly isDebugMode =
+    process.env.DEBUG_MODE === K.BOOLEAN_STRING.TRUE;
 
   constructor(context?: any, options = {}) {
     super(context, options);

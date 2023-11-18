@@ -7,6 +7,6 @@ export default Joi.object({
     .default(K.NODE_ENVIRONMENT.DEVELOPMENT),
   PORT: Joi.string().default(K.DEFAULT_PORT),
   DEBUG_MODE: Joi.string()
-    .valid(...Object.values(K.BOOLEAN))
-    .default(K.BOOLEAN.TRUE),
+    .valid(...Object.values(K.BOOLEAN_STRING))
+    .default(K.BOOLEAN_STRING.TRUE),
 });

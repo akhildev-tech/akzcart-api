@@ -11,7 +11,7 @@ export const MAX_JSON_REQUEST_SIZE = 10485760;
 
 export const CORS_METHODS = 'HEAD,OPTIONS,GET,POST,PATCH,DELETE';
 
-export const BOOLEAN = { TRUE: 'true', FALSE: 'false' };
+export const BOOLEAN_STRING = { TRUE: 'true', FALSE: 'false' };
 
 export type LOGGER_LEVEL_TYPE = 'error' | 'log' | 'warn';
 
