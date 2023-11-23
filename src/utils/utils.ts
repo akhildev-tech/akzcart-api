@@ -27,7 +27,7 @@ export function isObject(obj: any[] | any): boolean {
  * @returns {any[] | any} Converted object or object array
  */
 export function convertKeysToCamelCase(obj: any[] | any): any[] | any {
-  if (this.isObject(obj)) {
+  if (this?.isObject(obj)) {
     const newObj = {};
 
     Object.keys(obj).forEach((key) => {

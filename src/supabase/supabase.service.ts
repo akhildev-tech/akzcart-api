@@ -56,7 +56,7 @@ export class SupabaseService {
     return from(
       this.supabase.auth.signInWithPassword({ email, password }),
     ).pipe(
-      switchMap(({ error }: any): Observable<boolean> => {
+      switchMap(({ error }: { error: object | null }): Observable<boolean> => {
         if (error) throw new UnauthorizedException();
         return of(true);
       }),

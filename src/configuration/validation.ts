@@ -16,4 +16,11 @@ export default Joi.object({
   DB_PASSWORD: Joi.string().required(),
   SUPABASE_URL: Joi.string().required(),
   SUPABASE_KEY: Joi.string().required(),
+  JWT_SECRET: Joi.string().required(),
+  JWT_EXPIRY: Joi.string().required(),
+  JWT_REFRESH_SECRET: Joi.string().required(),
+  JWT_REFRESH_EXPIRY: Joi.string().required(),
+  REDIS_HOST: Joi.string().required(),
+  REDIS_PORT: Joi.string().required(),
+  REDIS_PASSWORD: Joi.string().required(),
 });

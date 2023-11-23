@@ -4,4 +4,6 @@ import { tags } from 'typia';
 export interface SignupInterface extends AuthInterface {
   name: string & tags.MinLength<1> & tags.MaxLength<100>;
 }
-export interface LoginInterface extends AuthInterface {}
+export interface LoginInterface extends AuthInterface {
+  deviceId: string & tags.MinLength<1> & tags.MaxLength<100>;
+}
