@@ -7,3 +7,12 @@ export interface SignupInterface extends AuthInterface {
 export interface LoginInterface extends AuthInterface {
   deviceId: string & tags.MinLength<1> & tags.MaxLength<100>;
 }
+
+interface TokenArrayInterface {
+  [x: string]: string;
+}
+
+export interface AuthRedisInterface {
+  accessToken: TokenArrayInterface[];
+  refreshToken: TokenArrayInterface[];
+}

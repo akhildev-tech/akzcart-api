@@ -2,6 +2,7 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { Observable, map } from 'rxjs';
+import { AuthRedisInterface } from 'src/api/auth/interfaces/auth.interface';
 import { Logger } from 'src/logger/logger.service';
 import { RedisService } from 'src/redis/redis.service';
 import * as K from '../../shared/constants';
@@ -40,9 +41,7 @@ export class JwtTokenStrategy extends PassportStrategy(
       throw new UnauthorizedException(K.ERROR_CODE.INVALID_ACCESS_TOKEN);
     }
 
-    this.logger.log('Getting data from the Redis.');
-
-    return this.redis.get(userId).pipe(
+    return this.redis.get<AuthRedisInterface>(userId).pipe(
       map((data) => {
         if (!data) {
           throw new UnauthorizedException(K.ERROR_CODE.INVALID_ACCESS_TOKEN);

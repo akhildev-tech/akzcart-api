@@ -3,6 +3,7 @@ import { ConfigType } from '@nestjs/config';
 import { Observable, switchMap } from 'rxjs';
 import configuration from 'src/configuration/configuration';
 import { RedisService } from 'src/redis/redis.service';
+import { AuthRedisInterface } from './interfaces/auth.interface';
 
 @Injectable()
 export class AuthHelper {
@@ -18,8 +19,8 @@ export class AuthHelper {
     accessToken: string,
     refreshToken: string,
   ): Observable<void> {
-    return this.redis.get(userId).pipe(
-      switchMap((response) => {
+    return this.redis.get<AuthRedisInterface>(userId).pipe(
+      switchMap((response: AuthRedisInterface) => {
         const token = response?.accessToken;
         const tokenCount = response?.accessToken?.length;
         let data;
